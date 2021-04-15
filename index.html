@@ -1,795 +1,331 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>我是一个没有感情的刷钱机器</title>
-    <style>
-        /* webkit printing magic: print all background colors */
-        
-        html {
-            -webkit-print-color-adjust: exact;
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buckzo - Responsive Minimal Template</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="MyraStudio">
+	
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+    <!-- Pe 7 icon Css-->
+    <link rel="stylesheet" type="text/css" href="./assets/css/pe-icon-7-stroke.css">
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	
+    <style class="blockbyte-bs-style" data-name="content">
+        body>div#blockbyte-bs-indicator>div {
+            opacity: 0;
+            pointer-events: none
         }
-        
-        * {
-            box-sizing: border-box;
-            -webkit-print-color-adjust: exact;
+
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-visible,
+        body>iframe#blockbyte-bs-overlay.blockbyte-bs-visible {
+            opacity: 1;
+            pointer-events: auto
         }
-        
-        html,
-        body {
-            margin: 0;
-            padding: 0;
+
+        body.blockbyte-bs-noscroll {
+            overflow: hidden !important
         }
-        
-        @media only screen {
-            body {
-                margin: 0em auto;
-                max-width: 900px;
-                color: rgb(55, 53, 47);
-            }
+
+        body>div#blockbyte-bs-indicator>div {
+            position: absolute;
+            transform: translate3d(-40px, 0, 0);
+            top: 0;
+            left: 0;
+            width: 40px !important;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 0 10px 10px 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 2
         }
-        
-        a,
-        a.visited {
-            color: inherit;
-            text-decoration: underline;
-        }
-        
-        .pdf-relative-link-path {
-            font-size: 80%;
-            color: #444;
-        }
-        
-        h1,
-        h2,
-        h3 {
-            letter-spacing: -0.01em;
-            line-height: 1.2;
-            font-weight: 600;
-            margin-bottom: 0;
-        }
-        
-        .page-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-top: 0;
-            margin-bottom: 0.75em;
-        }
-        
-        .page-body {
-            padding: 0 15px;
-        }
-        
-        h1 {
-            font-size: 1.875rem;
-            margin-top: 1.875rem;
-        }
-        
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        h3 {
-            font-size: 1.25rem;
-            margin-top: 1.25rem;
-        }
-        
-        .source {
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            padding: 1.5em;
-            word-break: break-all;
-        }
-        
-        .callout {
-            border-radius: 3px;
-            padding: 1rem;
-        }
-        
-        figure {
-            margin: 1.25em 0;
-            page-break-inside: avoid;
-        }
-        
-        figcaption {
-            opacity: 0.5;
-            font-size: 85%;
-            margin-top: 0.5em;
-        }
-        
-        mark {
-            background-color: transparent;
-        }
-        
-        .indented {
-            padding-left: 1.5em;
-        }
-        
-        hr {
-            background: transparent;
+
+        body>div#blockbyte-bs-indicator>div>span {
+            -webkit-mask: no-repeat center/32px;
+           
+            background-color: #ffffff;
+            position: absolute;
             display: block;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 1px;
-            visibility: visible;
+            height: 100%
+        }
+
+        body>div#blockbyte-bs-indicator[data-pos='right'] {
+            left: auto;
+            right: 0
+        }
+
+        body>div#blockbyte-bs-indicator[data-pos='right']>div {
+            transform: translate3d(40px, 0, 0);
+            left: auto;
+            right: 0;
+            border-radius: 10px 0 0 10px
+        }
+
+        body>div#blockbyte-bs-indicator.blockbyte-bs-fullHeight>div {
+            border-radius: 0
+        }
+
+        body>div#blockbyte-bs-indicator.blockbyte-bs-hover>div {
+            transform: translate3d(0, 0, 0);
+            opacity: 1
+        }
+
+        body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb {
+            height: 100% !important;
+            top: 0 !important
+        }
+
+        body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb>div {
+            background: transparent
+        }
+
+        body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb>div>span {
+            -webkit-mask-position-y: 20px
+        }
+
+        body>iframe#blockbyte-bs-sidebar {
+            width: 350px;
+            max-width: none;
+            height: 0;
+            z-index: 2147483646;
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            speak: none;
             border: none;
-            border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+            display: block !important;
+            transform: translate3d(-350px, 0, 0);
+            transition: width 0s 0.3s, height 0s 0.3s, opacity 0.3s, transform 0.3s
         }
-        
-        img {
-            max-width: 100%;
+
+        body>iframe#blockbyte-bs-sidebar[data-pos='right'] {
+            left: auto;
+            right: 0;
+            transform: translate3d(350px, 0, 0)
         }
-        
-        @media only print {
-            img {
-                max-height: 100vh;
-                object-fit: contain;
-            }
+
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-visible {
+            width: calc(100% + 350px);
+            height: 100%;
+            transform: translate3d(0, 0, 0);
+            transition: opacity 0.3s, transform 0.3s
         }
-        
-        @page {
-            margin: 1in;
+
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-hideMask {
+            background: none !important
         }
-        
-        .collection-content {
-            font-size: 0.875rem;
+
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-hideMask:not(.blockbyte-bs-hover) {
+            width: calc(350px + 50px)
         }
-        
-        .column-list {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .column {
-            padding: 0 1em;
-        }
-        
-        .column:first-child {
-            padding-left: 0;
-        }
-        
-        .column:last-child {
-            padding-right: 0;
-        }
-        
-        .table_of_contents-item {
-            display: block;
-            font-size: 0.875rem;
-            line-height: 1.3;
-            padding: 0.125rem;
-        }
-        
-        .table_of_contents-indent-1 {
-            margin-left: 1.5rem;
-        }
-        
-        .table_of_contents-indent-2 {
-            margin-left: 3rem;
-        }
-        
-        .table_of_contents-indent-3 {
-            margin-left: 4.5rem;
-        }
-        
-        .table_of_contents-link {
-            text-decoration: none;
-            opacity: 0.7;
-            border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-        }
-        
-        table,
-        th,
-        td {
-            border: 1px solid rgba(55, 53, 47, 0.09);
-            border-collapse: collapse;
-        }
-        
-        table {
-            border-left: none;
-            border-right: none;
-        }
-        
-        th,
-        td {
-            font-weight: normal;
-            padding: 0.25em 0.5em;
-            line-height: 1.5;
-            min-height: 1.5em;
-            text-align: left;
-        }
-        
-        th {
-            color: rgba(55, 53, 47, 0.6);
-        }
-        
-        ol,
-        ul {
-            margin: 0;
-            margin-block-start: 0.6em;
-            margin-block-end: 0.6em;
-        }
-        
-        li>ol:first-child,
-        li>ul:first-child {
-            margin-block-start: 0.6em;
-        }
-        
-        ul>li {
-            list-style: disc;
-        }
-        
-        ul.to-do-list {
-            text-indent: -1.7em;
-        }
-        
-        ul.to-do-list>li {
-            list-style: none;
-        }
-        
-        .to-do-children-checked {
-            text-decoration: line-through;
-            opacity: 0.375;
-        }
-        
-        ul.toggle>li {
-            list-style: none;
-        }
-        
-        ul {
-            padding-inline-start: 1.7em;
-        }
-        
-        ul>li {
-            padding-left: 0.1em;
-        }
-        
-        ol {
-            padding-inline-start: 1.6em;
-        }
-        
-        ol>li {
-            padding-left: 0.2em;
-        }
-        
-        .mono ol {
-            padding-inline-start: 2em;
-        }
-        
-        .mono ol>li {
-            text-indent: -0.4em;
-        }
-        
-        .toggle {
-            padding-inline-start: 0em;
-            list-style-type: none;
-        }
-        /* Indent toggle children */
-        
-        .toggle>li>details {
-            padding-left: 1.7em;
-        }
-        
-        .toggle>li>details>summary {
-            margin-left: -1.1em;
-        }
-        
-        .selected-value {
-            display: inline-block;
-            padding: 0 0.5em;
-            background: rgba(206, 205, 202, 0.5);
-            border-radius: 3px;
-            margin-right: 0.5em;
-            margin-top: 0.3em;
-            margin-bottom: 0.3em;
-            white-space: nowrap;
-        }
-        
-        .collection-title {
-            display: inline-block;
-            margin-right: 1em;
-        }
-        
-        time {
-            opacity: 0.5;
-        }
-        
-        .icon {
-            display: inline-block;
-            max-width: 1.2em;
-            max-height: 1.2em;
-            text-decoration: none;
-            vertical-align: text-bottom;
-            margin-right: 0.5em;
-        }
-        
-        img.icon {
-            border-radius: 3px;
-        }
-        
-        .user-icon {
-            width: 1.5em;
-            height: 1.5em;
-            border-radius: 100%;
-            margin-right: 0.5rem;
-        }
-        
-        .user-icon-inner {
-            font-size: 0.8em;
-        }
-        
-        .text-icon {
-            border: 1px solid #000;
-            text-align: center;
-        }
-        
-        .page-cover-image {
-            display: block;
-            object-fit: cover;
+
+        body>iframe#blockbyte-bs-overlay {
             width: 100%;
-            height: 60vh;
-        }
-        
-        .page-header-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .page-header-icon-with-cover {
-            margin-top: -0.72em;
-            margin-left: 0.07em;
-        }
-        
-        .page-header-icon img {
-            border-radius: 3px;
-        }
-        
-        .link-to-page {
-            margin: 1em 0;
-            padding: 0;
+            max-width: none;
+            height: 100%;
+            z-index: 2147483647;
             border: none;
-            font-weight: 500;
-        }
-        
-        p>.user {
-            opacity: 0.5;
-        }
-        
-        td>.user,
-        td>time {
-            white-space: nowrap;
-        }
-        
-        input[type="checkbox"] {
-            transform: scale(1.5);
-            margin-right: 0.6em;
-            vertical-align: middle;
-        }
-        
-        p {
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
-        }
-        
-        .image {
-            border: none;
-            margin: 1.5em 0;
-            padding: 0;
-            border-radius: 0;
-            text-align: center;
-        }
-        
-        .code,
-        code {
-            background: rgba(135, 131, 120, 0.15);
-            border-radius: 3px;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 85%;
-            tab-size: 2;
-        }
-        
-        code {
-            color: #eb5757;
-        }
-        
-        .code {
-            padding: 1.5em 1em;
-        }
-        
-        .code-wrap {
-            white-space: pre-wrap;
-            word-break: break-all;
-        }
-        
-        .code>code {
-            background: none;
-            padding: 0;
-            font-size: 100%;
-            color: inherit;
-        }
-        
-        blockquote {
-            font-size: 1.25em;
-            margin: 1em 0;
-            padding-left: 1em;
-            border-left: 3px solid rgb(55, 53, 47);
-        }
-        
-        .bookmark {
-            text-decoration: none;
-            max-height: 8em;
-            padding: 0;
-            display: flex;
-            width: 100%;
-            align-items: stretch;
-        }
-        
-        .bookmark-title {
-            font-size: 0.85em;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            height: 1.75em;
-            white-space: nowrap;
-        }
-        
-        .bookmark-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .bookmark-info {
-            flex: 4 1 180px;
-            padding: 12px 14px 14px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        
-        .bookmark-image {
-            width: 33%;
-            flex: 1 1 180px;
-            display: block;
-            position: relative;
-            object-fit: cover;
-            border-radius: 1px;
-        }
-        
-        .bookmark-description {
-            color: rgba(55, 53, 47, 0.6);
-            font-size: 0.75em;
-            overflow: hidden;
-            max-height: 4.5em;
-            word-break: break-word;
-        }
-        
-        .bookmark-href {
-            font-size: 0.75em;
-            margin-top: 0.25em;
-        }
-        
-        .sans {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-        }
-        
-        .code {
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        }
-        
-        .serif {
-            font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif;
-        }
-        
-        .mono {
-            font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
-        }
-        
-        .pdf .sans {
-            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR';
-        }
-        
-        .pdf .code {
-            font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR';
-        }
-        
-        .pdf .serif {
-            font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR';
-        }
-        
-        .pdf .mono {
-            font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR';
-        }
-        
-        .highlight-default {}
-        
-        .highlight-gray {
-            color: rgb(155, 154, 151);
-        }
-        
-        .highlight-brown {
-            color: rgb(100, 71, 58);
-        }
-        
-        .highlight-orange {
-            color: rgb(217, 115, 13);
-        }
-        
-        .highlight-yellow {
-            color: rgb(223, 171, 1);
-        }
-        
-        .highlight-teal {
-            color: rgb(15, 123, 108);
-        }
-        
-        .highlight-blue {
-            color: rgb(11, 110, 153);
-        }
-        
-        .highlight-purple {
-            color: rgb(105, 64, 165);
-        }
-        
-        .highlight-pink {
-            color: rgb(173, 26, 114);
-        }
-        
-        .highlight-red {
-            color: rgb(224, 62, 62);
-        }
-        
-        .highlight-gray_background {
-            background: rgb(235, 236, 237);
-        }
-        
-        .highlight-brown_background {
-            background: rgb(233, 229, 227);
-        }
-        
-        .highlight-orange_background {
-            background: rgb(250, 235, 221);
-        }
-        
-        .highlight-yellow_background {
-            background: rgb(251, 243, 219);
-        }
-        
-        .highlight-teal_background {
-            background: rgb(221, 237, 234);
-        }
-        
-        .highlight-blue_background {
-            background: rgb(221, 235, 241);
-        }
-        
-        .highlight-purple_background {
-            background: rgb(234, 228, 242);
-        }
-        
-        .highlight-pink_background {
-            background: rgb(244, 223, 235);
-        }
-        
-        .highlight-red_background {
-            background: rgb(251, 228, 228);
-        }
-        
-        .block-color-default {
-            color: inherit;
-            fill: inherit;
-        }
-        
-        .block-color-gray {
-            color: rgba(55, 53, 47, 0.6);
-            fill: rgba(55, 53, 47, 0.6);
-        }
-        
-        .block-color-brown {
-            color: rgb(100, 71, 58);
-            fill: rgb(100, 71, 58);
-        }
-        
-        .block-color-orange {
-            color: rgb(217, 115, 13);
-            fill: rgb(217, 115, 13);
-        }
-        
-        .block-color-yellow {
-            color: rgb(223, 171, 1);
-            fill: rgb(223, 171, 1);
-        }
-        
-        .block-color-teal {
-            color: rgb(15, 123, 108);
-            fill: rgb(15, 123, 108);
-        }
-        
-        .block-color-blue {
-            color: rgb(11, 110, 153);
-            fill: rgb(11, 110, 153);
-        }
-        
-        .block-color-purple {
-            color: rgb(105, 64, 165);
-            fill: rgb(105, 64, 165);
-        }
-        
-        .block-color-pink {
-            color: rgb(173, 26, 114);
-            fill: rgb(173, 26, 114);
-        }
-        
-        .block-color-red {
-            color: rgb(224, 62, 62);
-            fill: rgb(224, 62, 62);
-        }
-        
-        .block-color-gray_background {
-            background: rgb(235, 236, 237);
-        }
-        
-        .block-color-brown_background {
-            background: rgb(233, 229, 227);
-        }
-        
-        .block-color-orange_background {
-            background: rgb(250, 235, 221);
-        }
-        
-        .block-color-yellow_background {
-            background: rgb(251, 243, 219);
-        }
-        
-        .block-color-teal_background {
-            background: rgb(221, 237, 234);
-        }
-        
-        .block-color-blue_background {
-            background: rgb(221, 235, 241);
-        }
-        
-        .block-color-purple_background {
-            background: rgb(234, 228, 242);
-        }
-        
-        .block-color-pink_background {
-            background: rgb(244, 223, 235);
-        }
-        
-        .block-color-red_background {
-            background: rgb(251, 228, 228);
-        }
-        
-        .select-value-color-default {
-            background-color: rgba(206, 205, 202, 0.5);
-        }
-        
-        .select-value-color-gray {
-            background-color: rgba(155, 154, 151, 0.4);
-        }
-        
-        .select-value-color-brown {
-            background-color: rgba(140, 46, 0, 0.2);
-        }
-        
-        .select-value-color-orange {
-            background-color: rgba(245, 93, 0, 0.2);
-        }
-        
-        .select-value-color-yellow {
-            background-color: rgba(233, 168, 0, 0.2);
-        }
-        
-        .select-value-color-green {
-            background-color: rgba(0, 135, 107, 0.2);
-        }
-        
-        .select-value-color-blue {
-            background-color: rgba(0, 120, 223, 0.2);
-        }
-        
-        .select-value-color-purple {
-            background-color: rgba(103, 36, 222, 0.2);
-        }
-        
-        .select-value-color-pink {
-            background-color: rgba(221, 0, 129, 0.2);
-        }
-        
-        .select-value-color-red {
-            background-color: rgba(255, 0, 26, 0.2);
-        }
-        
-        .checkbox {
-            display: inline-flex;
-            vertical-align: text-bottom;
-            width: 16;
-            height: 16;
-            background-size: 16px;
-            margin-left: 2px;
-            margin-right: 5px;
-        }
-        
-        .checkbox-on {
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-        }
-        
-        .checkbox-off {
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+            speak: none;
+            background: rgba(0, 0, 0, 0.5) !important;
+            transition: opacity 0.3s
         }
     </style>
 </head>
 
 <body>
-    <article id="14ee28c7-03e2-47b4-b22d-5b43ce60f4c7" class="page serif">
-        <header><img class="page-cover-image" src="/images/lindsay-moe-526857-unsplash.jpg" style="object-position:center 50%" />
-            <div class="page-header-icon page-header-icon-with-cover"><span class="icon">💯</span></div>
-            <h1 class="page-title"><del>我是一个没有感情的刷钱机器</del>天火！天火！！</h1>
-        </header>
-        <div class="page-body">
-            <p id="a493d4e4-06c4-44ef-9295-76be44f8a806" class="block-color-pink_background">很多人相信宗教，很多人不相信。</p>
-            <p id="2c6953c2-23c5-4195-8a7a-aa2df121c251" class="block-color-pink_background">宗教可以认为是解释了不同的个体行为，这说明宗教的一部分内容是达到解释的目的的，但是不代表是最优解（@数学老师：我也不想但我也没办法【摊手】）</p>
-            <p id="98d984db-6c5a-49af-b937-f25ac5de2352" class="">在&quot;大时间&quot;看来，<strong>进化</strong>对于小尺度来说，是对个体以及个体所在种群有意义，先甚至于整个种群，再甚至于整个环境</p>
-            <p id="45ef17c9-52b6-4416-af63-2aadb7957119" class="">所以我们需要很多年才能本能的保护自己</p>
-            <p id="1b17a59d-8aa8-47f3-804a-43d4ca6e5b74" class="">再需要很多年才能本能的保护家人，保护人类共同体，甚至保护自然界</p>
-            <p id="56dadcea-4615-4f7c-a303-d85e6bfb2bd0" class="">但是一旦外来刺激，那么这一切就终止</p>
-            <p id="0a7f76c3-5853-426b-851f-9b58b5fb90bb" class="">呃</p>
-            <p id="09824015-53db-4b23-8fef-1274e4d468d5" class="">突然感觉，如果个体想法其实不会有益于它自己</p>
-            <p id="64e5a417-a24d-4ac3-b841-4c27d98c92ae" class="">那么，这种做法就不会继续下去</p>
-            <p id="c998beb8-f200-4b0f-afa1-3d479c64851c" class="">所以每个个体需要找到一个有益于自身基因发展下去的方法、和理由</p>
-            <p id="620899a8-bb92-4ec9-9d70-a5fb856225f6" class="">如果找不出来</p>
-            <p id="759e1847-39a8-4ed1-b84a-f2ed1c0734d6" class="">那很可能本能上就不想做这个事情</p>
-            <p id="15f0d50d-adb4-481e-9ccd-1ccda48a27c0" class="">就算这次做出来，下次也不可能</p>
-            <p id="75bc9469-4e4c-4294-b551-eed5da9ecf1a" class="">所以其他人也不可能，所以这种想法就死掉了</p>
-            <p id="d6a4105d-d40c-42e7-a715-a4cf6ecfc486" class="">卧槽</p>
-            <p id="d91d0a0d-8db5-486d-a2b8-398832e6cbe1" class="">又转回来了，你发现了吗</p>
-            <hr id="d63ca873-5440-4395-a4de-ead5225defba" />
-            <figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="eee421a0-3e8a-47dd-ad94-050961149104">
-                <div style="font-size:1.5em"><span class="icon">💡</span></div>
-                <div style="width:100%">就算有某个个体愿意牺牲自身，结果对于它来说，也就是牺牲了这么简单</div>
-            </figure>
-            <p id="6a2fab93-9efc-45d3-9a7a-3d390b2f6d94" class="">只要是需要DNA复制的生物，那么就需要为繁衍而努力，</p>
-            <p id="df7b39c4-4142-4567-962e-5fb92f6993da" class="">就算主观不想，那么客观上也会因为没办法而努力</p>
-            <p id="2f42ce36-41b2-4cf9-828d-4d0443756947" class="">这叫啥</p>
-            <p id="b359bbce-a0bd-4e8d-af26-d80f67bca83f" class="">这叫做天道</p>
-            <p id="d97c64c5-e556-43df-96f4-df0f8499fc9a" class="">所谓的文化传承，可以理解为进化和演化的高级产物，尤其是<strong>隔代记忆和进化</strong></p>
-            <p id="5a253ba4-d904-42f7-9310-c52962bc6763" class=""><strong>天道</strong>这种概念就不是&quot;我爸妈&quot;这种简单的一两代就可以得到的结果</p>
-            <p id="cd297674-ae2e-4cae-925e-83f7ba10bcbf" class="">这不同于经典的基因遗传的迭代</p>
-            <p id="0c454c3c-b826-4927-8368-a85ca316a7b0" class="">如果这种高级迭代可以让我这种思想（注意不是基因了）可以流传下去</p>
-            <p id="fed0ecb6-ed6f-4ab6-8d29-1e010b8f6c38" class="">那么这就是无限的演化思路中的一种了</p>
-            <p id="1916eeed-527c-4d0f-902f-10dcaa81979f" class="">卧槽</p>
-            <p id="6e01e9eb-f1be-4273-bf4c-65191151bed3" class="">哈哈哈哈哈哈哈哈哈哈</p>
-            <p id="1335d31a-aefd-4418-b3cd-ae28060f5dd1" class=""><em>这就是实实在在感觉到的个体演化</em></p>
-            <p id="85b8af78-175b-443a-8db8-7ecbcbc1ea1d" class="">如果让所谓的人可以意识到自己处于演化过程中，并且所有人类每个人都希望主导演化</p>
-            <p id="42b6b59e-5596-43c1-a041-b16626134264" class="">那么人类种群就得到了一个不同于基因优化的结果</p>
-            <hr id="cf623dcc-5b97-4fd3-b47f-2cc5de568524" />
-            <p id="78f71824-fc2e-4882-b867-d30b1cec2b2d" class="">如果不仅仅是复述其他人的教诲，而是化为自己的生活经验生活准则座右铭</p>
-            <p id="990de891-6462-4edf-acb5-ad9fc137d98e" class="">那么这种听从和相信，又会返回来变成演化中的一步</p>
-            <p id="e672c0ba-ed6f-4b79-8595-42544052f228" class="">比如说，</p>
-            <p id="d1acfefc-0f98-439e-8552-3678853d2140" class="">如果有人相信了身边的故事，那么他们存活下来，就会更相信身边的故事；</p>
-            <p id="df28e629-3dd5-4195-8eb2-d8b38171a803" class="">如果有人相信了神，他们存活下来，就会更相信神的故事；</p>
-            <p id="c1099780-82df-43ec-88c7-910d48adda5b" class="">所以说演化是没优劣的</p>
-            <blockquote id="75aefafb-24c9-43a1-8bfe-c8750b84280d" class="">演化的优劣本身没有意义，因为它需要环境来确定；但那叫做进化</blockquote>
-            <p id="76d44ef1-4bbe-4a7f-89d6-c52ed0daf1dc" class="">因为活下来这种条件，其实不由他们本身决定</p>
-            <p id="c2bba59d-75b2-44ed-8eba-8bbebc341b23" class="">所以说我们现在的存在本身就是各种可能性之一，这种存在的结果无所谓过程，存在即合理</p>
-            <p id="5545c1d3-07b4-498c-9b69-18f0a23a8eb7" class="">全都可以联系在一起</p>
-            <hr id="af850ba0-bcbf-4714-9126-c4876f1e18c5" />
-            <figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e67f17f4-2a7f-4f58-8214-153e747198d7">
-                <div style="font-size:1.5em"><span class="icon">💡</span></div>
-                <div style="width:100%"><em>我希望我可以找到一个理论，把所有的人间的事情都解释的通</em></div>
-            </figure>
-            <p id="6fc9adc0-62bd-4d1b-9c93-c76ba907d545" class="">所以现在可以确定，这个是存在的</p>
-            <p id="af6920fd-ef17-48d0-9dd3-6bd94548807e" class="">但是由于我的见识太少，所以看不清楚</p>
-            <p id="4295f0ef-b9a7-4e46-b810-88ba6dd7af1b" class="">哈哈哈哈哈哈哈哈哈哈</p>
-            <p id="ebe10663-b872-48e5-8af5-393982c0d85e" class="">这已经整齐划一，所以当然存在</p>
-            <p id="74ea3919-e28b-45c2-bbfe-2da215e561e9" class="">至于西方的宗教，参照尼安德特人的兴亡, 明白人早已有结论; 另外到以及进化论, 哈, 贴不贴谱自然纵说纷纭, 但进化和演化肯定是贴谱的</p>
-            <blockquote id="c352b074-0f66-44fa-8a83-9c2430b70688" class="">感谢你</blockquote>
-            <blockquote id="16682991-08a6-4ed3-a1d8-40d44e1199af" class="">可以作为倾听者</blockquote>
-            <figure id="b2eef506-e319-4335-9401-d1bc7c015e04" class="image">
-                <a href="/images/edgar-castrejon-459814-unsplash.jpg"><img style="width:3630px" src="/images/edgar-castrejon-459814-unsplash.jpg" /></a>
-            </figure>
+    <!-- Start Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-default navbar-custom navbar-light">
+        <div class="container">
+			<a class="navbar-brand logo" href="javascript:void(0);">
+				<img src="https://www.17sucai.com/static/i/logo-float.png" />
+			</a>
+            
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);">About</a></li>
+                </ul>
+            </div>
+			
         </div>
-    </article>
-</body>
+    </nav><!-- End Navbar -->
+	
+    <section class="section">
+        <div class="container">
+            <!-- SECTION FILTER ================================================== -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="portfolio-filter text-center">
+						<a href="javascript:void(0);" data-filter="*" class="current waves-effect waves-success">All</a>
+						<a href="javascript:void(0);" data-filter=".design" class="waves-effect waves-success">Design</a>
+						<a href="javascript:void(0);" data-filter=".mockup" class="waves-effect waves-success">Mockup</a>
+						<a href="javascript:void(0);" data-filter=".personal" class="waves-effect waves-success">Web</a>
+						<a href="javascript:void(0);" data-filter=".android" class="waves-effect waves-success">Android</a>
+                    </div>
+                </div>
+            </div>
+            <div class="port portfolio-masonry m-b-30">
+                <div class="portfolioContainer row" style="position: relative; height: 1730.69px;">
+                    <div class="col-lg-4 design personal" style="position: absolute; left: 0px; top: 0px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img1.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>Media,Icons</p>
+                                    <h4>Open Imagination</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 mockup personal android" style="position: absolute; left: 380px; top: 0px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img2.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>Illustrations</p>
+                                    <h4>Locked Steel Gate</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 design mockup" style="position: absolute; left: 760px; top: 0px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img3.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>Graphics,UI Elements</p>
+                                    <h4>Mac Sunglasses</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 personal android" style="position: absolute; left: 0px; top: 263px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img4.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>Icons,Illustrations</p>
+                                    <h4>Morning Dew</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 mockup android" style="position: absolute; left: 760px; top: 479px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img5.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>UI Elements,Media</p>
+                                    <h4>Console Activity</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 design personal" style="position: absolute; left: 380px; top: 496px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img6.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>Graphics</p>
+                                    <h4>Sunset Bulb Glow</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 mockup android" style="position: absolute; left: 0px; top: 519px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img8.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>UI Elements,Media</p>
+                                    <h4>Console Activity</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 design mockup" style="position: absolute; left: 380px; top: 993px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img7.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>Illustrations,Graphics</p>
+                                    <h4>Shake It!</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 design mockup" style="position: absolute; left: 0px; top: 1016px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img9.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>Illustrations,Graphics</p>
+                                    <h4>Shake It!</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 design mockup" style="position: absolute; left: 760px; top: 1037px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img10.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>Illustrations,Graphics</p>
+                                    <h4>Shake It!</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 design" style="position: absolute; left: 380px; top: 1286px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img11.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>Illustrations,Graphics</p>
+                                    <h4>Shake It!</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 design mockup" style="position: absolute; left: 760px; top: 1428px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img12.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>Illustrations,Graphics</p>
+                                    <h4>Shake It!</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 design mockup" style="position: absolute; left: 0px; top: 1484px;"><a
+                            href="javascript:void(0);">
+                            <div class="portfolio-box">
+                                <div class="portfolio-box-img"><img src="./assets/images/img13.jpg" class="img-fluid"
+                                        alt="member-image"></div>
+                                <div class="portfolio-box-detail">
+                                    <p>Illustrations,Graphics</p>
+                                    <h4>Shake It!</h4>
+                                </div>
+                            </div>
+                        </a></div>
+                </div><!-- end portfoliocontainer-->
+            </div><!-- End row -->
+        </div><!-- end container -->
+    </section>
 
+    <script src="./assets/js/jquery-2.1.4.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+	
+    <!-- isotope filter plugin -->
+    <script src="./assets/js/isotope.pkgd.min.js"></script>
+    <script src="./assets/js/portfolio-filter.js"></script>
+    <script src="./assets/js/app.js"></script>
+	
+</body>
 </html>
